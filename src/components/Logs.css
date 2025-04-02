@@ -1,0 +1,384 @@
+/* Estilos generales */
+.logs-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading, .error {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 4px;
+}
+
+/* Pestañas de servidores */
+.server-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.tab-button.active {
+    color: #4361ee;
+    border-bottom-color: #4361ee;
+    font-weight: 500;
+}
+
+/* Filtros */
+.filters-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filters-section h3 {
+    margin-top: 0;
+    color: #444;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.filter-group select, .filter-group input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.search-group {
+    grid-column: 1 / -1;
+}
+
+.search-group input {
+    width: 100%;
+}
+
+/* Contador de logs */
+.logs-count {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* Lista de logs */
+.logs-list {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.log-item {
+    border-left: 4px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.log-item.log-error {
+    border-left-color: #d32f2f;
+}
+
+.log-item.log-warn {
+    border-left-color: #ffa000;
+}
+
+.log-item.log-info {
+    border-left-color: #1976d2;
+}
+
+.log-item.log-debug {
+    border-left-color: #7b1fa2;
+}
+
+.log-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.log-timestamp {
+    color: #666;
+}
+
+.log-level {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.log-level.error {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.log-level.warn {
+    background-color: #fff8e1;
+    color: #ffa000;
+}
+
+.log-level.info {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.log-level.debug {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.log-method {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.log-status {
+    font-weight: bold;
+}
+
+.log-status[data-status^="2"] {
+    color: #2e7d32;
+}
+
+.log-status[data-status^="4"] {
+    color: #d32f2f;
+}
+
+.log-status[data-status^="5"] {
+    color: #ed6c02;
+}
+
+.log-response-time {
+    color: #666;
+}
+
+.log-path {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.log-details {
+    font-size: 0.85rem;
+    color: #555;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.log-details div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.no-logs {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Scrollbar personalizada */
+.logs-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.logs-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.logs-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.logs-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* Agrega esto a ambos archivos CSS */
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    padding: 8px 15px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #5a6268;
+    transform: translateX(-3px);
+}
+
+/* Ajuste para el título */
+.header-controls h1, 
+.header-controls h2 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Agrega esto a tu archivo CSS (Logs.css o LogsCharts.css) */
+.toggle-charts {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .toggle-charts:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(67, 97, 238, 0.2);
+    background: linear-gradient(135deg, #3a56d4 0%, #2a0a8a 100%);
+  }
+  
+  .toggle-charts:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-charts::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+  }
+  
+  .toggle-charts:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(20, 20);
+      opacity: 0;
+    }
+  }
+  
+  .toggle-charts .icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-charts[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
+  }
+.date-range {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 10px;
+}
+
+
+.log-item:hover {
+    transform: translateX(3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+
+.detail-item pre {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+    max-height: 200px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .log-details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .log-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .log-header > span {
+        margin-bottom: 5px;
+    }
+}
