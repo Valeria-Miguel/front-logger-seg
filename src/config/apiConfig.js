@@ -1,6 +1,6 @@
 const API_CONFIG = {
-  BASE_URL: 'http://localhost:3001', // Servidor 1 (con Rate Limit)
-  BASE_URL_DOS: 'http://localhost:3002' // Servidor 2 (sin Rate Limit)
+  BASE_URL: 'https://back-1-ryfw.onrender.com', // Servidor 1 (con Rate Limit)
+  BASE_URL_DOS: 'https://back-2-fhcu.onrender.com' // Servidor 2 (sin Rate Limit)
 };
 
 export const getApiUrl = (endpoint = '') => {
